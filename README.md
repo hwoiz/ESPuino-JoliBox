@@ -1,13 +1,13 @@
 # ESPuino – RFID-gesteuerter Audioplayer auf Basis von ESP32 mit I2S-DAC-Unterstützung
 
-Dies ist die angepasste Version von ESPuino von biologist. Sie basiert auf dem Stand vom 7.11.2023. Siehe hierzu <https://github.com/biologist79/ESPuino>
+Dies ist die angepasste Version vom github Repository ESPuino von biologist79. Sie basiert auf dem Stand vom 7.11.2023. Siehe hierzu <https://github.com/biologist79/ESPuino>
 
-Es folgt eine deutsche Übersetzung aus dem Orginal Repository.
+Es folgt eine deutsche Übersetzung aus dem biologist79-Repository.
 
 ## Forum
 
-- DE: Biologist hat ein deutschsprachiges Forum aufgesetzt, welches mit reichlich Doku
-  versehen ist. Würde biologist freuen, euch dort zu sehen: <https://forum.espuino.de>. Ihr könnt euch
+Der Autor biologist79 hat ein deutschsprachiges Forum aufgesetzt, welches mit reichlich Doku
+  versehen ist. biologist würde es freuen, euch dort zu sehen: <https://forum.espuino.de>. Ihr könnt euch
   dort mit eurem Github-Login einloggen, jedoch auch "normal" anmelden. Dokumentation findet ihr
   insbesondere hier: <https://forum.espuino.de/c/dokumentation/anleitungen/10>.
 
@@ -47,57 +47,51 @@ Sie können Leiterplatten jedoch auch gerne selbst entwickeln. Beachten Sie jedo
 
 ## Getting started
 
-- [Much more documentation in german
-  language](https://forum.espuino.de/c/dokumentation/anleitungen/10).
-- You need to install Microsoft's [Visual Studio Code](https://code.visualstudio.com/).
-- Install [PlatformIO Plugin](https://platformio.org/install/ide?install=vscode) into [Visual Studio
-  Code](https://code.visualstudio.com/) and make sure to have a look at the
+- [Viel mehr Dokumentation](https://forum.espuino.de/c/dokumentation/anleitungen/10).
+- Sie müssen [Visual Studio Code](https://code.visualstudio.com/) von Microsoft installieren.
+- Installieren Sie das [PlatformIO Plugin](https://platformio.org/install/ide?install=vscode) in [Visual Studio
+  Code](https://code.visualstudio.com/) und schauen Sie sich unbedingt die
   [documentation](https://docs.platformio.org/en/latest/integration/ide/pioide.html).
-  Step-by-step-manual is available
-  [here](https://randomnerdtutorials.com/vs-code-platformio-ide-esp32-esp8266-arduino/.)
-- Install [Git](https://git-scm.com/downloads) and make a copy ("clone") of my repository to your local
-  computer using `git clone https://github.com/biologist79/ESPuino.git`. Using Git you can keep your
-  local repository easily up to date without doing copy'n'paste. To keep it up to date run `git pull
-  origin master`. Further infos
-  [here](https://stackoverflow.com/questions/1443210/updating-a-local-repository-with-changes-from-a-github-repository)
-  and
-  [here](https://forum.espuino.de/t/espuino-in-platformio-anlegen-und-mit-git-aktuell-halten/891).
-- (Optional) Install [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-  as plugin (to have advanced Git features in VSCode).
-- Now, that the Git repository is saved locally, import this folder into Platformio as a project.
-- Select the [desired
-  environment](https://forum.espuino.de/t/projekt-und-profilwechsel-in-visual-studio-code/768) (e.g.
-  lolin_d32_pro_sdmmc_pe).
-- Edit `src/settings.h` according your needs.
-- Edit board-specific (`HAL`) config-file (e.g. `settings-lolin_d32_pro_sdmmc_pe.h` for Lolin
-  D32/D32 pro). If you're running a board that is not listed there: start with `settings-custom.h`
-  and change it according your needs.
-- Connect your develboard via USB, click the alien-head icon in the left sidebar, choose the project
-  task that matches your desired HAL and run `Upload and Monitor`. All libraries necessary are
-  fetched automatically and compilation of the code gets started. After that, your ESP32 is flashed
-  with the firmware. Depending on your develboard it might be necessary to push a button in order to
-  allow ESP32 to enter flash mode (not necessary für Lolin32, D32 und D32 pro).
-- Now have a look at the serial output at the bottom of Visual Studio Code's window. At the first
-  run there might appear a few error messages (related to missing entries in NVS). Don't worry, this
-  is just normal. However, make sure the SD card is detected as this is mandatory!
-- If everything ran fine, at the first run, ESPuino should open an access-point and ESPuino offers a
-  captive portal that is shown on your computer. If that's not the case, join a WiFi called
-  "ESPuino" and enter `http://192.168.4.1` to your webbrowser. Enter WiFi credentials and the
-  hostname there (or in the captive portal). After saving the configuration, restart ESPuino.
-- After reboot ESPuino tries to join your WiFi (with the credentials previously entered). If that
-  was successful, an IP is shown in the serial console. You can access ESPuino's GUI using a
-  webbrowser via this IP; make sure to allow Javascript. If the mDNS feature is active in
-  `src/settings.h`, you can use the hostname configured extended by .local instead the IP. So if you
-  configured `espuino` as hostname, you can use `http://espuino.local` for web GUI and FTP.
-- Via FTP and web GUI you can upload data (expect a throughput like 320 kB/s up to 700 kB/s).
-- FTP needs to be activated after boot if you need it! Don't forget to assign action
-  `ENABLE_FTP_SERVER` in `settings.h` to be able to activate it. Neopixel flashes green (1x) if
-  enabling was successful. It'll be disabled automatically after next reboot. Means: you have to
-  enable it every time you need it (if reboot was in between). Sounds annoying and maybe it is,
-  but's running this way in order to have more heap-memory available (for webstream) if FTP isn't
-  needed.
-- Via webbrowser you can configure various settings and pair RFID tags with actions. If
-  MQTT/FTP-support was not compiled, their config tabs won't appear.
+  an . Eine Schritt-für-Schritt-Anleitung finden Sie
+  [hier](https://randomnerdtutorials.com/vs-code-platformio-ide-esp32-esp8266-arduino/.)
+- Installieren Sie [Git](https://git-scm.com/downloads) und erstellen Sie mit . eine Kopie („Klon“) meines Repositorys auf Ihrem lokalen Computer `git clone https://github.com/biologist79/ESPuino.git`. Mit Git können Sie Ihr lokales Repository ganz einfach auf dem neuesten Stand halten, ohne es kopieren und einfügen zu müssen. Um es auf dem neuesten Stand zu halten, führen Sie Folgendes aus `git pull origin master`. Weitere Informationen 
+  [hier](https://stackoverflow.com/questions/1443210/updating-a-local-repository-with-changes-from-a-github-repository)
+  und
+  [hier](https://forum.espuino.de/t/espuino-in-platformio-anlegen-und-mit-git-aktuell-halten/891).
+- (Optional) Installieren Sie [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+  als Plugin (um erweiterte Git-Funktionen in VSCode zu haben).
+- Da das Git-Repository nun lokal gespeichert ist, importieren Sie diesen Ordner als Projekt in Platformio.
+- Wählen Sie die [gewünschte Umgebung](https://forum.espuino.de/t/projekt-und-profilwechsel-in-visual-studio-code/768) (z.B. lolin_d32_pro_sdmmc_pe).
+- Bearbeiten Sie `src/settings.h` ntsprechend Ihren Anforderungen.
+- Boardspezifische (`HAL`) Konfigurationsdatei bearbeiten (z. B. `settings-lolin_d32_pro_sdmmc_pe.h` für Lolin D32/D32 pro). Wenn Sie ein Board betreiben, das dort 
+  nicht aufgeführt ist: Beginnen Sie mit `settings-custom.h` und ändern Sie es entsprechend Ihren Anforderungen. 
+- Schließen Sie Ihr Entwicklungsboard über USB an, klicken Sie auf das Alien-Kopf-Symbol in der linken Seitenleiste, 
+  wählen Sie die Projektaufgabe aus, die Ihrem gewünschten HAL entspricht, und führen Sie aus Upload and Monitor. 
+  Alle notwendigen Bibliotheken werden automatisch abgerufen und die Kompilierung des Codes beginnt. Danach wird 
+  Ihr ESP32 mit der Firmware geflasht. Abhängig von Ihrem Entwicklungsboard kann es erforderlich sein, eine Taste 
+  zu drücken, damit ESP32 in den Flash-Modus wechselt (nicht erforderlich für Lolin32, D32 und D32 pro).
+- Schauen Sie sich nun die serielle Ausgabe unten im Fenster von Visual Studio Code an. Beim ersten Start können 
+  einige Fehlermeldungen erscheinen (im Zusammenhang mit fehlenden Einträgen in NVS). Keine Sorge, das ist einfach 
+  normal. Stellen Sie jedoch sicher, dass die SD-Karte erkannt wird, da dies zwingend erforderlich ist!
+- Wenn alles gut gelaufen ist, sollte ESPuino beim ersten Start einen Zugangspunkt öffnen und ESPuino bietet ein 
+  Captive-Portal an, das auf Ihrem Computer angezeigt wird. Wenn das nicht der Fall ist, verbinden Sie sich mit 
+  einem WLAN namens „ESPuino“ und geben Sie es `http://192.168.4.1` in Ihren Webbrowser ein. Geben Sie dort 
+  (oder im Captive-Portal) die WLAN-Anmeldeinformationen und den Hostnamen ein. Nachdem Sie die Konfiguration 
+  gespeichert haben, starten Sie ESPuino neu.
+- Nach dem Neustart versucht ESPuino, sich Ihrem WLAN anzuschließen (mit den zuvor eingegebenen Anmeldeinformationen). 
+  War dies erfolgreich, wird in der seriellen Konsole eine IP angezeigt. Über diese IP können Sie mit einem Webbrowser 
+  auf die GUI von ESPuino zugreifen; Stellen Sie sicher, dass Sie Javascript zulassen. Wenn die mDNS-Funktion in aktiv ist
+  `src/settings.h`, können Sie anstelle der IP den konfigurierten Hostnamen erweitert um .local verwenden. Sie können also 
+  `http://espuino.local` für Web-GUI und FTP verwenden.
+- Über FTP und Web-GUI können Sie Daten hochladen (erwarten Sie einen Durchsatz von 320 kB/s bis zu 700 kB/s).
+- Bei Bedarf muss FTP nach dem Booten aktiviert werden! Vergessen Sie nicht, eine Aktion zuzuweisen 
+  `ENABLE_FTP_SERVER` in `settings.h` um sie aktivieren zu können. Neopixel blinkt grün (1x), wenn die Aktivierung 
+  erfolgreich war. Es wird nach dem nächsten Neustart automatisch deaktiviert. Bedeutet: Sie müssen es jedes Mal 
+  aktivieren, wenn Sie es benötigen (wenn zwischendurch ein Neustart erfolgte). Klingt nervig und ist es vielleicht 
+  auch, aber es wird auf diese Weise ausgeführt, um mehr Heap-Speicher (für Webstream) zur Verfügung zu haben, wenn 
+  FTP nicht benötigt wird.
+- Über den Webbrowser können Sie verschiedene Einstellungen konfigurieren und RFID-Tags mit Aktionen verknüpfen. 
+  Wenn die MQTT/FTP-Unterstützung nicht kompiliert wurde, werden ihre Konfigurationsregisterkarten nicht angezeigt.
 
 ## SD-card: SPI or SD-MMC (1 bit)-mode?
 
