@@ -45,9 +45,9 @@ an [ESPuino-mini 4L (SMD)](https://forum.espuino.de/t/espuino-mini-4layer/1661) 
 
 Sie können Leiterplatten jedoch auch gerne selbst entwickeln. Beachten Sie jedoch auch hier, dass Ihr ESP32 PSRAM benötigt, um ESPuino ordnungsgemäß auszuführen.
 
-## Getting started
+## Erste Schritte
 
-- [Viel mehr Dokumentation](https://forum.espuino.de/c/dokumentation/anleitungen/10).
+- [Viel mehr Dokumentation gibt es hier](https://forum.espuino.de/c/dokumentation/anleitungen/10).
 - Sie müssen [Visual Studio Code](https://code.visualstudio.com/) von Microsoft installieren.
 - Installieren Sie das [PlatformIO Plugin](https://platformio.org/install/ide?install=vscode) in [Visual Studio
   Code](https://code.visualstudio.com/) und schauen Sie sich unbedingt die
