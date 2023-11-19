@@ -1,0 +1,21 @@
+// Gruppen
+Group Daheim
+
+// OG
+Group Obergeschoss	                "Obergeschoss"		                            <firstfloor>        (Daheim)
+Group ZimmerTim		                "Kinderzimmer Tim"	                            <boy_2>			    (Obergeschoss)
+
+// Zimmer Kind
+Switch Espuino_Sleep															            { channel="mqtt:topic:MQTT:espuino:espuino_sleep_mqtt", autoupdate="true" }
+String Espuino_Rfid															                { channel="mqtt:topic:MQTT:espuino:espuino_rfid_mqtt", autoupdate="true" }
+Number Espuino_Loudness			    "Lautstärke [%d]"										{ channel="mqtt:topic:MQTT:espuino:espuino_loudness_mqtt", autoupdate="true" }
+String Espuino_SleepTimer															        { channel="mqtt:topic:MQTT:espuino:espuino_sleeptimer_mqtt", autoupdate="true" }
+String Espuino_Status															            { channel="mqtt:topic:MQTT:espuino:espuino_status_mqtt", autoupdate="true", expire="2m, command=Offline" }
+String Espuino_CurrentTrack			"Aktueller Track"										{ channel="mqtt:topic:MQTT:espuino:espuino_current_track_mqtt", autoupdate="true" }
+String Espuino_TrackControl			"Track-Control"											{ channel="mqtt:topic:MQTT:espuino:espuino_track_control_mqtt", autoupdate="false" }
+String Espuino_IPv4				    "IPv4-Adresse"											{ channel="mqtt:topic:MQTT:espuino:espuino_ipv4_mqtt", autoupdate="true" }
+Switch Espuino_LockControls			"Bedienung sperren"										{ channel="mqtt:topic:MQTT:espuino:espuino_lock_controls_mqtt", autoupdate="true" }
+Number Espuino_Playmode			    "Aktueller Playmode [MAP(playmodes.map):%d]"			{ channel="mqtt:topic:MQTT:espuino:espuino_playmode_mqtt", autoupdate="true" }
+Number Espuino_LedBrightness		"Helligkeit LEDs"										{ channel="mqtt:topic:MQTT:espuino:espuino_led_brightness_mqtt", autoupdate="true" }
+DateTime Espuino_LastUpdate			"Letztes Update [%1$ta %1$tR]" 		            <time>
+Number Espuino_Repeatmode			"Wiederholung"  										{ channel="mqtt:topic:MQTT:espuino:espuino_led_repeatmode_mqtt", autoupdate="true" }
