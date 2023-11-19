@@ -1,76 +1,49 @@
-# ESPuino - RFID-controlled Audio Player based on ESP32 with I2S-DAC Support
+# ESPuino – RFID-gesteuerter Audioplayer auf Basis von ESP32 mit I2S-DAC-Unterstützung
 
-![build workflow](https://github.com/biologist79/ESPuino/actions/workflows/test-builds.yml/badge.svg)
+Dies ist die angepasste Version von ESPuino von biologist. Sie basiert auf dem Stand vom 7.11.2023. Siehe hierzu <https://github.com/biologist79/ESPuino>
+
+Es folgt eine deutsche Übersetzung aus dem Orginal Repository.
 
 ## Forum
 
-- EN: I've set up a primarily German-speaking community with much documentation. Also an
-  international corner for non-German-speakers is available at <https://forum.espuino.de>.
-  GitHub login can be used for signing in there (optional).
-- DE: Ich habe ein primär deutschsprachiges Forum aufgesetzt, welches ich mit reichlich Doku
-  versehen habe. Würde mich freuen, euch dort zu sehen: <https://forum.espuino.de>. Ihr könnt euch
+- DE: Biologist hat ein deutschsprachiges Forum aufgesetzt, welches mit reichlich Doku
+  versehen ist. Würde biologist freuen, euch dort zu sehen: <https://forum.espuino.de>. Ihr könnt euch
   dort mit eurem Github-Login einloggen, jedoch auch "normal" anmelden. Dokumentation findet ihr
   insbesondere hier: <https://forum.espuino.de/c/dokumentation/anleitungen/10>.
 
 ## News
 
-> :warning: By the end of october 2023, ESPuino switched framework from ESP32-Arduino1 to ESP32-Arduino2.
-This brought lots of improvements but as it turned out, due to memory restrictions this version
-no longer runs safely on ESP32 without PSRAM. So please make sure to use an ESP32-WROVER!
+> :warning: Bis Ende Oktober 2023 hat ESPuino das Framework von ESP32-Arduino1 auf ESP32-Arduino2 umgestellt. Dies brachte viele Verbesserungen mit sich, aber wie sich herausstellte, läuft diese Version aufgrund von Speicherbeschränkungen nicht mehr sicher auf ESP32 ohne PSRAM. Bitte achten Sie also unbedingt darauf, einen ESP32-WROVER zu verwenden!
 
-## Current development
+## ESPuino - was ist das?
 
-There is a [development branch (dev)](https://github.com/biologist79/ESPuino/tree/dev) that contains
-new features, that will be introduced and tested there first until they become part of the master
-branch. Feel free to try but be advised this could be unstable.
+Die Grundidee von ESPuino besteht darin, RFID-Tags zur Steuerung eines Audioplayers zu verwenden. Sogar für Kinder ist dieses Konzept einfach: Legen Sie einen mit einem RFID-Tag versehenen Gegenstand (Karte, Spielzeugfigur usw.) auf eine Schachtel und die Musik beginnt mit der Wiedergabe von Inhalten von der SD-Karte oder dem Webradio. Legen Sie einen anderen RFID-Tag darauf und etwas anderes wird abgespielt. So einfach ist das.
 
-## ESPuino - what's that?
-
-The basic idea of ESPuino is to use RFID tags to control an audio player. Even for kids this concept
-is simple: place a RFID-tagged object (card, toy character, etc.) on top of a box and the music
-starts to play stuff from SD card or webradio. Place a different RFID tag on it and something else
-is played. Simple as that.
-
-This project is based on the popular microcontroller [ESP32 by
-Espressif](https://www.espressif.com/en/products/hardware/esp32/overview). Why? It's powerful and
-having WiFi support out-of-the-box enables further features like an integrated webserver,
-smarthome-integration via MQTT, webradio and FTP server. And even Bluetooth, too! However, my
-primary focus was to port the project to a modular base: MP3-decoding is done in software and the
-digital music output is done via the popular [I2S protocol](https://en.wikipedia.org/wiki/I%C2%B2S).
-So we need a [DAC](https://en.wikipedia.org/wiki/Digital-to-analog_converter) to make an analog
-signal of it: I did all my tests with
+Dieses Projekt basiert auf dem beliebten Mikrocontroller [ESP32 by
+Espressif](https://www.espressif.com/en/products/hardware/esp32/overview). Warum? Es ist leistungsstark und die sofort einsatzbereite WLAN-Unterstützung ermöglicht weitere Funktionen wie einen integrierten Webserver, Smarthome-Integration über MQTT, Webradio und FTP-Server. Und sogar Bluetooth! Mein Hauptaugenmerk lag jedoch darauf, das Projekt auf eine modulare Basis zu portieren: Die MP3-Dekodierung erfolgt in Software und die digitale Musikausgabe erfolgt über das beliebte [I2S protocol](https://en.wikipedia.org/wiki/I%C2%B2S).
+Wir brauchen also einen [DAC](https://en.wikipedia.org/wiki/Digital-to-analog_converter) , um daraus ein analoges Signal zu machen: Ich habe alle meine Tests mit
 [MAX98357A](https://learn.adafruit.com/adafruit-max98357-i2s-class-d-mono-amp/pinouts),
 [UDA1334](https://www.adafruit.com/product/3678),
-[MS6324](https://forum.espuino.de/t/kopfhoererplatine-basierend-auf-ms6324-und-tda1308/1099/) and
-[PCM5102a](https://github.com/biologist79/ESPuino/tree/master/PCBs/Headphone%20with%20PCM5102a%20and%20TDA1308).
-General advice: ESPuino makes use of library
-[ESP32-audioI2S](https://github.com/schreibfaul1/ESP32-audioI2S/); so everything that's supposed to
-work with this library should work with ESPuino, too (but maybe not right out-of-the-box).
-Especially this is true for
+[MS6324](https://forum.espuino.de/t/kopfhoererplatine-basierend-auf-ms6324-und-tda1308/1099/) und
+[PCM5102a](https://github.com/biologist79/ESPuino/tree/master/PCBs/Headphone%20with%20PCM5102a%20and%20TDA1308)durchgeführt. Allgemeiner Hinweis: ESPuino nutzt die Bibliothek
+[ESP32-audioI2S](https://github.com/schreibfaul1/ESP32-audioI2S/); also sollte alles, was mit dieser Bibliothek funktionieren soll, auch mit ESPuino funktionieren (aber vielleicht nicht sofort einsatzbereit). Dies gilt insbesondere für
 [ES8388](https://github.com/schreibfaul1/ESP32-audioI2S/blob/master/examples/ESP32_ES8388/ESP32_ES8388.ino).
 
-## Hardware setup
+## Hardware-Setup
 
-You could start on a breadboard with jumper wires but I _strongly_ recommend to start right away
-with a PCB that was especially developed for ESPuino. There are several available, but
-[ESPuino-mini 4L (SMD)](https://forum.espuino.de/t/espuino-mini-4layer/1661) can be considered as
-being the latest generation. Furthermore you need a ESP32-develboard like (or another one that's
-pin compatible):
+Sie könnten mit einem Steckbrett mit Überbrückungsdrähten beginnen, ich empfehle jedoch dringend , sofort mit einer Leiterplatte zu beginnen, die speziell für ESPuino entwickelt wurde. Es sind mehrere verfügbar, aber
+[ESPuino-mini 4L (SMD)](https://forum.espuino.de/t/espuino-mini-4layer/1661) kann als die neueste Generation angesehen werden. Darüber hinaus benötigen Sie ein ESP32-Entwicklungsboard wie (oder ein anderes, das Pin-kompatibel ist):
 
 - [D32 pro LiFePO4](https://forum.espuino.de/t/esp32-develboard-d32-pro-lifepo4/1109)
 - [E32 LiPo](https://forum.espuino.de/t/esp32-develboard-e32-lipo/1135)
 - [Wemos Lolin D32 pro](https://www.wemos.cc/en/latest/d32/d32_pro.html)
 
-> :warning: **Due to memory restrictions meanwhile it's mandatory to use ESP32 with
-PSRAM.** This being said you need to make sure that your develboard carries an ESP32-WROVER.
-And you should make sure that 16 MB flash memory is available (both is true for all
-develboards named above).
+> :warning: **Aufgrund von Speicherbeschränkungen ist es mittlerweile zwingend erforderlich, ESP32 mit PSRAM zu verwenden.** Vor diesem Hintergrund müssen Sie sicherstellen, dass Ihr Entwicklungsboard über einen ESP32-WROVER verfügt. Und Sie sollten darauf achten, dass 16 MB Flash-Speicher zur Verfügung stehen (beides gilt für alle oben genannten Entwicklungsboards).
 
-Optionally a [headphone-pcb](https://forum.espuino.de/t/kopfhoererplatine-basierend-auf-ms6324-und-tda1308/1099/)
-can be attached to [ESPuino-mini 4L (SMD)](https://forum.espuino.de/t/espuino-mini-4layer/1661).
+Optional kann eine [headphone-pcb](https://forum.espuino.de/t/kopfhoererplatine-basierend-auf-ms6324-und-tda1308/1099/)
+an [ESPuino-mini 4L (SMD)](https://forum.espuino.de/t/espuino-mini-4layer/1661) angeschlossen werden .
 
-However, feel free to develop PCBs yourself. But again, be advised your ESP32 needs PSRAM in order to
-run ESPuino properly.
+Sie können Leiterplatten jedoch auch gerne selbst entwickeln. Beachten Sie jedoch auch hier, dass Ihr ESP32 PSRAM benötigt, um ESPuino ordnungsgemäß auszuführen.
 
 ## Getting started
 
