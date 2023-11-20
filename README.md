@@ -1,6 +1,8 @@
 # ESPuino – RFID-gesteuerter Audioplayer auf Basis von ESP32 mit I2S-DAC-Unterstützung
+![Jolibox](Dokumentation/images/Jolibox-Gesamt.png)
 
-Dies ist die angepasste Version vom github Repository ESPuino von biologist79. Sie basiert auf dem Stand vom 7.11.2023. Siehe hierzu <https://github.com/biologist79/ESPuino>
+Dies ist die angepasste Version vom Github-Repository `ESPuino` von [biologist79](https://github.com/biologist79/ESPuino). 
+Stand vom 7.11.2023
 
 ## Angepasste Konfiguration der Joli-Box
 
