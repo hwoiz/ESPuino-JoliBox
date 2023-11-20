@@ -7,6 +7,8 @@ Das mit einem 3D-Drucker erstelltem Gehäuse entstand eine 'kinderleicht' zu bed
 
 Die Wiedergabeauswahl der gepeicherten Titel erfolgt mit programmierten RFID-Karten. Die gesamte Administration des Audioplayers erfolgt über eine Webseite mit einem beliebigen Browser.
 
+- Benutzerhandbuch
+- Technikhandbuch
 - [Anpassungen der Konfigurationsdateien](Dokumentation/Konfiguration.md)
 - Verwendete Bauteile
 - 3D-Druck Gehäuse
