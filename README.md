@@ -8,7 +8,7 @@ Das Gehäuse wurde mit Fusion360 von Harald Woizischke entwickelt und einem 3D-D
 - [Anpassungen der Konfigurationsdateien](Dokumentation/Konfiguration.md)
 - Verwendete Bauteile
 - 3D-Druck Gehäuse
-- ....
+- ...
 
 
 
