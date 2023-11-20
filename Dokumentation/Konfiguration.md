@@ -71,6 +71,8 @@
 
 ```152: #define BUTTON_MULTI_45   CMD_NOTHING```
 
+```203: constexpr const char accessPointNetworkSSID[] = "Jolibox";``` Von ESPuino auf Jolibox ändern
+
 ```207: constexpr const char nameBluetoothSinkDevice[] = "Jolibox";```  Von ESPuino auf Jolibox ändern
 
 
