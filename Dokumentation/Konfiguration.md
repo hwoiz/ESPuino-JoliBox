@@ -7,6 +7,7 @@
 
 
 ## settings.h
+
 ```34: #define PORT_EXPANDER_ENABLE``` Zeile aktivieren
 
 ```57: #define SAVE_PLAYPOS_BEFORE_SHUTDOWN``` Zeile aktivieren
@@ -65,12 +66,16 @@
 ```149: #define BUTTON_MULTI_25   CMD_NOTHING```
 
 ```150: #define BUTTON_MULTI_34   CMD_NOTHING```
+
 ```151: #define BUTTON_MULTI_35   CMD_NOTHING```
+
 ```152: #define BUTTON_MULTI_45   CMD_NOTHING```
+
 ```207: constexpr const char nameBluetoothSinkDevice[] = "Jolibox";```  Von ESPuino auf Jolibox ändern
 
 
 ## settings-lolin_d32_pro_sdmmc_pe.h
+
 ``` 95: #define POWER   115```  Wert von 32 auf 115 ändern
 
 ``` 97: #define INVERT_POWER```  Zeile aktivieren    
