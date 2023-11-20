@@ -95,7 +95,7 @@ Sie können Leiterplatten jedoch auch gerne selbst entwickeln. Beachten Sie jedo
 
 ## SD-card: SPI or SD-MMC (1 bit)-mode?
 
-s ist zwingend erforderlich, dass die SD-Karte funktioniert. ESPuino startet nicht ohne funktionierende SD-Karte (zumindest sofern dies `NO_SDCARD` aktiviert wurde). Es stehen jedoch zwei Modi für die Schnittstelle zu SD-Karten zur Verfügung: SPI und SDMMC (1 Bit). Beachten Sie, dass SDMMC doppelt so schnell ist wie SPI und einen GPIO weniger benötigt. Im Grunde ist es also ein Kinderspiel.
+Es ist zwingend erforderlich, dass die SD-Karte funktioniert. ESPuino startet nicht ohne funktionierende SD-Karte (zumindest sofern dies `NO_SDCARD` aktiviert wurde). Es stehen jedoch zwei Modi für die Schnittstelle zu SD-Karten zur Verfügung: SPI und SDMMC (1 Bit). Beachten Sie, dass SDMMC doppelt so schnell ist wie SPI und einen GPIO weniger benötigt. Im Grunde ist es also ein Kinderspiel.
 
 ## Welcher RFID-Leser: RC522 oder PN5180?
 
@@ -139,10 +139,10 @@ Es kann Situationen geben, in denen Ihnen die GPIOs ausgehen. Um diesem Problem 
 
 ## Nachdem ESPuino mit Ihrem WLAN verbunden ist
 
-ANachdem Sie ESPuino zu einem Teil Ihres LANs/WLANs gemacht haben, ist die „normale“ Web-GUI unter der von Ihrem Router zugewiesenen IP (oder dem konfigurierten Hostnamen) verfügbar. Mit dieser GUI können Sie:
+Nachdem Sie ESPuino zu einem Teil Ihres LANs/WLANs gemacht haben, ist die „normale“ Web-GUI unter der von Ihrem Router zugewiesenen IP (oder dem konfigurierten Hostnamen) verfügbar. Mit dieser GUI können Sie:
 
-- WLAN konfigurieren
-- Erstellen Sie Verknüpfungen zwischen RFID-Tag, Datei/Verzeichnis/URL und Wiedergabemodus
+- Das WLAN konfigurieren
+- Verknüpfungen zwischen RFID-Tag, Datei/Verzeichnis/URL und Wiedergabemodus erstellen
 - Bindungen zwischen RFID-Tag und einem Modifikationstyp herstellen
 - MQTT konfigurieren (falls aktiviert)
 - FTP konfigurieren (falls aktiviert)
@@ -310,11 +310,11 @@ Da alle Zuordnungen zwischen RFID-IDs und Aktionen (Wiedergabemodus, abzuspielen
 
 Alles, was über RFID-Tags und -Tasten gesteuert werden kann, kann auch über MQTT gesteuert werden (mit Ausnahme des Umschaltens des WLAN-Status, da dies keinen Sinn ergibt). Alle manuellen Interaktionen (Tasten, RFID-Tags) werden auch parallel an MQTT gesendet, sodass alles immer synchron ist (es sei denn, die WLAN-/MQTT-Verbindung ist unterbrochen).
 
-IUm es nutzen zu können, muss ein MQTT-Broker ausgeführt werden. [Mosquitto](https://mosquitto.org/) zum Beispiel. Nach der Verbindung abonniert ESPuino alle Befehlsthemen. Statusthemen werden verwendet, um Status an den Broker zu senden, um andere zu informieren, wenn sich etwas geändert hat (Änderung der Lautstärke, neue Playlist, neuer Titel, was auch immer).
+Um es nutzen zu können, muss ein MQTT-Broker ausgeführt werden. [Mosquitto](https://mosquitto.org/) zum Beispiel. Nach der Verbindung abonniert ESPuino alle Befehlsthemen. Statusthemen werden verwendet, um Status an den Broker zu senden, um andere zu informieren, wenn sich etwas geändert hat (Änderung der Lautstärke, neue Playlist, neuer Titel, was auch immer).
 
 In meinem Heim-Setup verwende ich [openHAB](https://www.openhab.org/) um MQTT in einer schönen GUI zu „kapseln“, auf die über App + Web zugegriffen werden kann. Weitere Informationen (und Bilder) finden Sie im [openHAB directory](https://github.com/biologist79/ESPuino/tree/master/openHAB).
 
-> :information_source: ch habe eine Beispielkonfiguration für openHAB2  [beschrieben](https://github.com/biologist79/ESPuino/tree/master/openHAB). Mittlerweile ist jedoch openHAB3 verfügbar und alle beschriebenen Dinge können auch per GUI konfiguriert werden. Beachten Sie, dass openHAB ziemlich komplex ist und Sie einige Zeit aufwenden müssen, um sich damit vertraut zu machen.
+> :information_source: Ich habe eine Beispielkonfiguration für openHAB2  [beschrieben](https://github.com/biologist79/ESPuino/tree/master/openHAB). Mittlerweile ist jedoch openHAB3 verfügbar und alle beschriebenen Dinge können auch per GUI konfiguriert werden. Beachten Sie, dass openHAB ziemlich komplex ist und Sie einige Zeit aufwenden müssen, um sich damit vertraut zu machen.
 
 #### MQTT topics
 
