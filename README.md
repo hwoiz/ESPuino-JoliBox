@@ -14,5 +14,5 @@ Stand vom 7.11.2023
 
 ---------------------------------------------------------------------------------------
 
-[## Deutsche Übersetzung der README.md aus dem biologist79-Repository](Dokumentation/README.md-biologist.md)
+##[Deutsche Übersetzung der README.md aus dem biologist79-Repository](Dokumentation/README.md-biologist.md)
 
