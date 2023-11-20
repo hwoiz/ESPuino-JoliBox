@@ -14,8 +14,6 @@
 
 ```58: #define SAVE_PLAYPOS_WHEN_RFID_CHANGE``` Zeile aktivieren
 
-```203: constexpr const char accessPointNetworkSSID[] = "Jolibox";``` Von ESPuino auf Jolibox ändern
-
 ```124: #define BUTTON_0_SHORT    CMD_NEXTTRACK```
 
 ```125: #define BUTTON_1_SHORT    CMD_PREVTRACK```
@@ -71,15 +69,15 @@
 
 ```152: #define BUTTON_MULTI_45   CMD_NOTHING```
 
-```203: constexpr const char accessPointNetworkSSID[] = "Jolibox";``` Von ESPuino auf Jolibox ändern
+```203: constexpr const char accessPointNetworkSSID[] = "Jolibox";``` Von  `ESPuino`  auf `Jolibox` ändern
 
-```207: constexpr const char nameBluetoothSinkDevice[] = "Jolibox";```  Von ESPuino auf Jolibox ändern
+```207: constexpr const char nameBluetoothSinkDevice[] = "Jolibox";```  Von `ESPuino` auf `Jolibox` ändern
 
 
 ## settings-lolin_d32_pro_sdmmc_pe.h
 
-``` 95: #define POWER   115```  Wert von 32 auf 115 ändern
+``` 95: #define POWER   115```  Wert von `32` auf `115` ändern
 
 ``` 97: #define INVERT_POWER```  Zeile aktivieren    
 
-```215: #define NUM_INDICATOR_LEDS	12 ```Von 24 auf 12 ändern
+```215: #define NUM_INDICATOR_LEDS	12 ``` Von `24` auf `12` ändern
