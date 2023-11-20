@@ -4,7 +4,7 @@
 Dies ist die angepasste Version vom Github-Repository `ESPuino` von [biologist79](https://github.com/biologist79/ESPuino). 
 Stand vom 7.11.2023
 
-- Konfiguration der Joli-Box
+- [Konfiguration der Joli-Box](Dokumentation/Konfiguration.md)
 
 
 
