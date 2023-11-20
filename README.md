@@ -4,15 +4,12 @@
 Dies ist die angepasste Version vom Github-Repository `ESPuino` von [biologist79](https://github.com/biologist79/ESPuino). 
 Stand vom 7.11.2023
 
-## Angepasste Konfiguration der Joli-Box
-
-### settings.h
+- Konfiguration der Joli-Box
 
 
-#### settings-lolin_d32_pro_sdmmc_pe.h
 
 
 ---------------------------------------------------------------------------------------
 
-##[Deutsche Übersetzung der README.md aus dem biologist79-Repository](Dokumentation/README.md-biologist.md)
+[Deutsche Übersetzung der README.md aus dem biologist79-Repository](Dokumentation/README.md-biologist.md)
 
