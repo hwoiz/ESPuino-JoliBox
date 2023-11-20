@@ -76,8 +76,8 @@
 
 ## settings-lolin_d32_pro_sdmmc_pe.h
 
-``` 95: #define POWER   115```  Wert von `32` auf `115` ändern
+``` 95: #define POWER 115```  Wert von `32` auf `115` ändern
 
 ``` 97: #define INVERT_POWER```  Zeile aktivieren    
 
-```215: #define NUM_INDICATOR_LEDS	12 ``` Von `24` auf `12` ändern
+```215: #define NUM_INDICATOR_LEDS 12 ``` Von `24` auf `12` ändern
