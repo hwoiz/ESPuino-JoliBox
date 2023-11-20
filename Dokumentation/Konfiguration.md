@@ -4,4 +4,4 @@
 Folgende Änderungen wurden in die Datei eingefügt:
 
 ## settings-lolin_d32_pro_sdmmc_pe.h
-Folgende Änderungen wurden in die Datei eingefügt:
+Folgende Änderungen wurden in die Datei durchgeführt:
