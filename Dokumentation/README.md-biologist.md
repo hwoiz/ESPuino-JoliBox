@@ -1,4 +1,8 @@
-# Deutsche Übersetzung der README.md aus dem biologist79-Repository](Dokumentation/README.md-biologist.md)
+# # ESPuino – RFID-gesteuerter Audioplayer auf Basis von ESP32 mit I2S-DAC-Unterstützung
+
+Deutsche Übersetzung der README.md aus dem biologist79-Repository](Dokumentation/README.md-biologist.md)
+
+Stand 07.11.2023
 
 ## Forum
 
