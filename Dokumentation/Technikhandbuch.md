@@ -125,9 +125,26 @@ Möchte man einer Taste eine Aktion zuweisen, so sind folgende Aktionen möglich
 |CMD_SEEK_BACKWARDS	|Springt n Sekunden nach hinten im Titel (Dauer in settings.h konfigurierbar
 
 
-## Tastaturbelegung für die Jolibox
+# Erstkonfiguration der Jolibox
+
+Nach der Übernahme des Sourcecode von biologist sind in folgenden Dateien einige Konfigurationen anzupassen.
+
+## plattformio.ini
+
 ```
-    Taste                     Kommando                         Aktion
+13: default_envs = lolin_d32_pro_sdmmc_pe  // Ist als Default voreingestellt
+```
+## settings.h
+
+```34: #define PORT_EXPANDER_ENABLE``` Zeile aktivieren
+
+```57: #define SAVE_PLAYPOS_BEFORE_SHUTDOWN``` Zeile aktivieren
+
+```58: #define SAVE_PLAYPOS_WHEN_RFID_CHANGE``` Zeile aktivieren
+
+Zeilen 124 bis 152 mit nachfolgenden Zeilen ersetzen
+
+```
     #define BUTTON_0_SHORT    CMD_NEXTTRACK                   // Nächster Titel              	
     #define BUTTON_1_SHORT    CMD_PREVTRACK                   // vorheriger Titel              	
     #define BUTTON_2_SHORT    CMD_PLAYPAUSE                   // Play/Pause             	
@@ -156,6 +173,18 @@ Möchte man einer Taste eine Aktion zuweisen, so sind folgende Aktionen möglich
     #define BUTTON_MULTI_25   CMD_NOTHING                	  // nicht definiert
     #define BUTTON_MULTI_34   CMD_NOTHING                     // nicht definiert
     #define BUTTON_MULTI_35   CMD_NOTHING                     // nicht definiert
-    #define BUTTON_MULTI_45   CMD_TOGGLE_BLUETOOTH_SOURCE_MODE // Bluetooth-Kopfhörer
+    #define BUTTON_MULTI_45   CMD_TOGGLE_BLUETOOTH_SOURCE_MODE // Bluetooth-Kopfhörer 
 ```
 
+```203: constexpr const char accessPointNetworkSSID[] = "Jolibox";``` Von  `ESPuino`  auf `Jolibox` ändern
+
+```207: constexpr const char nameBluetoothSinkDevice[] = "Jolibox";```  Von `ESPuino` auf `Jolibox` ändern
+
+
+## settings-lolin_d32_pro_sdmmc_pe.h
+
+``` 95: #define POWER 115```  Wert von `32` auf `115` ändern
+
+``` 97: #define INVERT_POWER```  Zeile aktivieren    
+
+```215: #define NUM_INDICATOR_LEDS 12 ``` Von `24` auf `12` ändern
