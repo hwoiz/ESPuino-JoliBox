@@ -39,36 +39,36 @@ Es wurden folgende Baugruppen und Bauteile zur Realisierung eingesetzt.
 
 ##RFID-Reader 5180
 ```
-Stecker	        Farbe	        PN5180
-5V     ------   sw	 ---------  5V
-3.3V   ------   rt	 ---------  3.3	
-RST	   ------   ws	 ---------  RST
-CS	   ------   ge	 ---------  NSS
-MOSI   ------   or	 ---------  MOSI
-MISO   ------	gn	 ---------  MISO
-SCK	   ------   bl	 ---------  SCK
-BSY	   ------   vi	 ---------  BUSY
-IRQ	   ------   gr	 ---+  +--  GND
-GND	   ------   br	 ---|--+    GPIO
-		            +----   IRQ
-		                    AUX
-		                     REQ 
+Stecker         Farbe           PN5180
+5V     ------   sw   ---------  5V
+3.3V   ------   rt   ---------  3.3	
+RST    ------   ws   ---------  RST
+CS     ------   ge   ---------  NSS
+MOSI   ------   or   ---------  MOSI
+MISO   ------   gn   ---------  MISO
+SCK    ------   bl   ---------  SCK
+BSY    ------   vi   ---------  BUSY
+IRQ    ------   gr   ---+  +--  GND
+GND    ------   br   ---|--+    GPIO
+                        +----   IRQ
+                                AUX
+                                REQ 
 ```
 
 ##Rotary-Encoder
 ```
-Stecker	   Farbe	       Encoder
-DT	-----  sw	 -+    +-  CLK
-CLK	-----  rt	 -+----+-  DT
-BTN	-----  ws	 --------  SW
-3.3	-----  ge	 --------  +
-GND	-----  or	 --------  GND
+Stecker     Farbe           Encoder
+DT  -----   sw   -+    +-  CLK
+CLK -----   rt   -+----+-  DT
+BTN -----   ws   --------  SW
+3.3 -----   ge   --------  +
+GND -----   or   --------  GND
 ```
 
 ##NeoPixel
 ```
-Stecker	       Farbe	          LED-Stripe	
--       -----	rt	  -------  -	
-D1	-----   sw	  -------  D0
-+	-----   ge	  -------  5V
+Stecker     Farbe          LED-Stripe	
+-   -----   rt    -------  -	
+D1  -----   sw    -------  D0
++   -----   ge    -------  5V
 ```
