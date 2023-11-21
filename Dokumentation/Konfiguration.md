@@ -14,60 +14,39 @@
 
 ```58: #define SAVE_PLAYPOS_WHEN_RFID_CHANGE``` Zeile aktivieren
 
-```124: #define BUTTON_0_SHORT    CMD_NEXTTRACK```
+Zeilen 124 bis 152 mit nachfolgenden Zeilen ersetzen
 
-```125: #define BUTTON_1_SHORT    CMD_PREVTRACK```
-
-```126: #define BUTTON_2_SHORT    CMD_PLAYPAUSE```
-
-```127: #define BUTTON_3_SHORT    CMD_MEASUREBATTERY```
-
-```128: #define BUTTON_4_SHORT    CMD_SEEK_BACKWARDS```
-
-```129: #define BUTTON_5_SHORT    CMD_SEEK_FORWARDS```
-
-```131: #define BUTTON_0_LONG     CMD_LASTTRACK```
-
-```132: #define BUTTON_1_LONG     CMD_FIRSTTRACK```
-
-```133: #define BUTTON_2_LONG     CMD_PLAYPAUSE```
-
-```134: #define BUTTON_3_LONG     CMD_SLEEPMODE```
-
-```135: #define BUTTON_4_LONG     CMD_VOLUMEUP```
-
-```136: #define BUTTON_5_LONG     CMD_VOLUMEDOWN```
-
-
-```138: #define BUTTON_MULTI_01   CMD_NOTHING ```  //CMD_TOGGLE_WIFI_STATUS (disabled now to prevent children from unwanted WiFi-disable)
-
-```139: #define BUTTON_MULTI_02   CMD_ENABLE_FTP_SERVER```
-
-```140: #define BUTTON_MULTI_03   CMD_NOTHING``` 
-
-```141: #define BUTTON_MULTI_04   CMD_NOTHING```
-
-```142: #define BUTTON_MULTI_05   CMD_NOTHING```
-
-```143: #define BUTTON_MULTI_12   CMD_TELL_IP_ADDRESS```
-
-```144: #define BUTTON_MULTI_13   CMD_NOTHING```
-
-```145: #define BUTTON_MULTI_14   CMD_NOTHING```
-
-```146: #define BUTTON_MULTI_15   CMD_NOTHING```
-
-```147: #define BUTTON_MULTI_23   CMD_NOTHING```
-
-```148: #define BUTTON_MULTI_24   CMD_NOTHING```
-
-```149: #define BUTTON_MULTI_25   CMD_NOTHING```
-
-```150: #define BUTTON_MULTI_34   CMD_NOTHING```
-
-```151: #define BUTTON_MULTI_35   CMD_NOTHING```
-
-```152: #define BUTTON_MULTI_45   CMD_NOTHING```
+```
+    #define BUTTON_0_SHORT    CMD_NEXTTRACK                   // Nächster Titel              	
+    #define BUTTON_1_SHORT    CMD_PREVTRACK                   // vorheriger Titel              	
+    #define BUTTON_2_SHORT    CMD_PLAYPAUSE                   // Play/Pause             	
+    #define BUTTON_3_SHORT    CMD_NOTHING                     // nicht definiert
+    #define BUTTON_4_SHORT    CMD_SEEK_BACKWARDS              // um 30 Sek. zurückspulen 
+    #define BUTTON_5_SHORT    CMD_SEEK_FORWARDS               // um 30 Sek. vorspulen
+    
+    #define BUTTON_0_LONG     CMD_LASTTRACK                   // letzter Titel der Playliste
+    #define BUTTON_1_LONG     CMD_FIRSTTRACK                  // erster Titel der Playliste
+    #define BUTTON_2_LONG     CMD_SLEEPMODE                   // Ausschalten
+    #define BUTTON_3_LONG     CMD_SLEEPMODE                   // nicht definiert
+    #define BUTTON_4_LONG     CMD_VOLUMEUP                    // Lautstärke erhöhen
+    #define BUTTON_5_LONG     CMD_VOLUMEDOWN                  // Lautstärke verringern
+ 
+    #define BUTTON_MULTI_01   CMD_REPEAT_TRACK                // Titel endlos wdhl. 
+    #define BUTTON_MULTI_02   CMD_ENABLE_FTP_SERVER           // FTP-Server aktivieren 
+    #define BUTTON_MULTI_03   CMD_NOTHING                     // nicht definiert 
+    #define BUTTON_MULTI_04   CMD_TOGGLE_BLUETOOTH_SINK_MODE  // Bluetooth-Modus an/aus
+    #define BUTTON_MULTI_05   CMD_DIMM_LEDS_NIGHTMODE         // LED auf Nachtmodus 
+    #define BUTTON_MULTI_12   CMD_TELL_IP_ADDRESS             // IP-Adresse der Box ansagen
+    #define BUTTON_MULTI_13   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_14   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_15   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_23   CMD_NOTHING                	  // nicht definiert
+    #define BUTTON_MULTI_24   CMD_SLEEP_TIMER_MOD_30          // Sleeptimer 30 Minuten 
+    #define BUTTON_MULTI_25   CMD_NOTHING                	  // nicht definiert
+    #define BUTTON_MULTI_34   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_35   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_45   CMD_TOGGLE_BLUETOOTH_SOURCE_MODE // Bluetooth-Kopfhörer 
+```
 
 ```203: constexpr const char accessPointNetworkSSID[] = "Jolibox";``` Von  `ESPuino`  auf `Jolibox` ändern
 
