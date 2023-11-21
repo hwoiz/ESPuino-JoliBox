@@ -10,8 +10,8 @@ Die gesamte Administration des Audioplayers erfolgt über eine Webseite mit eine
 
 ---
 
-- Benutzerhandbuch
-- Technikhandbuch
+- [Benutzerhandbuch](Dokumentation/Benutzerhandbuch.md)
+- [Technikhandbuch](Dokumentation/Technikhandbuch.md)
 - [Anpassungen der Konfigurationsdateien](Dokumentation/Konfiguration.md)
 - Bauteile
 - Gehäuse
