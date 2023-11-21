@@ -12,8 +12,6 @@ Die gesamte Administration des Audioplayers erfolgt über eine Webseite mit eine
 
 - [Benutzerhandbuch](Dokumentation/Benutzerhandbuch.md)
 - [Technikhandbuch](Dokumentation/Technikhandbuch.md)
-- [Anpassungen der Konfigurationsdateien](Dokumentation/Konfiguration.md)
-- Bauteile
 - Gehäuse
 - [Deutsche Übersetzung der README.md aus dem biologist79-Repository](Dokumentation/README.md-biologist.md)
 
