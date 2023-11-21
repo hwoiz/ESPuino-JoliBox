@@ -123,3 +123,61 @@ Möchte man einer Taste eine Aktion zuweisen, so sind folgende Aktionen möglich
 |CMD_SLEEPMODE	|Schaltet ESPuino sofort aus
 |CMD_SEEK_FORWARDS	|Springt n Sekunden nach vorne im Titel (Dauer in settings.h konfigurierbar
 |CMD_SEEK_BACKWARDS	|Springt n Sekunden nach hinten im Titel (Dauer in settings.h konfigurierbar
+
+**Beispiel:** Man möchte ein Layout, welches auf drei Tasten und einem Drehencoder basiert. Dabei möchte man gerne zum vorherigen Titel, zum nächsten Titel, zum ersten Titel und zum letzten Titel springen können. Man möchte auch Pause/Play setzen kann. Weiterhin mittels Drehencoder den ESPuino anschalten, ausschalten, die Lautstärke ändern und die Batteriespannung anzeigen. Dies könnte man wie folgt machen (nicht zugewiesene Aktionen sind ausgeblendet):
+
+
+``` c
+#define BUTTON_0_SHORT CMD_NEXTTRACK
+#define BUTTON_1_SHORT CMD_PREVTRACK
+#define BUTTON_2_SHORT CMD_PLAYPAUSE
+#define BUTTON_3_SHORT CMD_MEASUREBATTERY
+#define BUTTON_0_LONG CMD_LASTTRACK
+#define BUTTON_1_LONG CMD_FIRSTTRACK
+#define BUTTON_2_LONG CMD_PLAYPAUSE
+#define BUTTON_3_LONG CMD_SLEEPMODE
+```
+Weiterhin möchte man mit der Tastenkombination aus `NEXT` und `PREVIOUS` das WLAN aus- und anschalten können. Zusätzlich mit der Tastenkombination `PAUSE/PLAY` und `NEXT` den FTP-Server aktivieren.
+```
+0: NEXT_BUTTON
+1: PREVIOUS_BUTTON
+2: PAUSEPLAY_BUTTON
+3: DREHENCODER_BUTTON
+4: BUTTON_4 (Volume up)
+5: BUTTON_5 (Volume down)
+```
+- Eine Multi-Button-Aktion ergibt sich somit immer auf Basis zweier solcher Nummern. Für NEXT+PREVIOUS also z.B. 01. Dabei ist darauf zu achten, dass die kleinere Zahl immer vorne zu stehen hat. D.h. während 01 gültig ist, wäre das bei 10 nicht der Fall.
+- Abgesehen von GPIOs (0 bis 39) können auch Channels des Port-Expanders PCA9555 verwendet werden, sofern dieser verwendet wird und aktiviert ist. Der Wertebereich ist 100 bis 115. Weitere Informationen dazu gibt es hier: 📗 Einsatz des Port-Expanders PCA9555 13.
+
+## Tastaturbelegung Jolibox
+    // *****BUTTON*****        *****ACTION*****
+    #define BUTTON_0_SHORT    CMD_NEXTTRACK                   // Nächster Titel              	
+    #define BUTTON_1_SHORT    CMD_PREVTRACK                   // vorheriger Titel              	
+    #define BUTTON_2_SHORT    CMD_PLAYPAUSE                   // Play/Pause             	
+    #define BUTTON_3_SHORT    CMD_NOTHING                     // nicht definiert
+    #define BUTTON_4_SHORT    CMD_SEEK_BACKWARDS              // um 30 Sek. zurückspulen 
+    #define BUTTON_5_SHORT    CMD_SEEK_FORWARDS               // um 30 Sek. vorspulen
+    
+    #define BUTTON_0_LONG     CMD_LASTTRACK                   // letzter Titel der Playliste
+    #define BUTTON_1_LONG     CMD_FIRSTTRACK                  // erster Titel der Playliste
+    #define BUTTON_2_LONG     CMD_SLEEPMODE                   // Ausschalten
+    #define BUTTON_3_LONG     CMD_SLEEPMODE                   // nicht definiert
+    #define BUTTON_4_LONG     CMD_VOLUMEUP                    // Lautstärke erhöhen
+    #define BUTTON_5_LONG     CMD_VOLUMEDOWN                  // Lautstärke verringern
+ 
+    #define BUTTON_MULTI_01   CMD_REPEAT_TRACK                // Titel endlos wdhl. 
+    #define BUTTON_MULTI_02   CMD_ENABLE_FTP_SERVER           // FTP-Server aktivieren 
+    #define BUTTON_MULTI_03   CMD_NOTHING                     // nicht definiert 
+    #define BUTTON_MULTI_04   CMD_TOGGLE_BLUETOOTH_SINK_MODE  // Bluetooth-Modus an/aus
+    #define BUTTON_MULTI_05   CMD_DIMM_LEDS_NIGHTMODE         // LED auf Nachtmodus 
+    #define BUTTON_MULTI_12   CMD_TELL_IP_ADDRESS             // IP-Adresse der Box ansagen
+    #define BUTTON_MULTI_13   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_14   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_15   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_23   CMD_NOTHING                	  // nicht definiert
+    #define BUTTON_MULTI_24   CMD_SLEEP_TIMER_MOD_30          // Sleeptimer 30 Minuten 
+    #define BUTTON_MULTI_25   CMD_NOTHING                	  // nicht definiert
+    #define BUTTON_MULTI_34   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_35   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_45   CMD_TOGGLE_BLUETOOTH_SOURCE_MODE // Bluetooth-Kopfhörer 
+
