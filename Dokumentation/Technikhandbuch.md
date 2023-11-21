@@ -35,9 +35,9 @@ Es wurden folgende Baugruppen und Bauteile zur Realisierung eingesetzt.
 # D32_FePo_rev4
 ![D32_FePo_rev4](images/D32_FePo_rev4.png)
 
-#Kabelplan
+# Kabelplan
 
-##RFID-Reader 5180
+## RFID-Reader 5180
 ```
 Stecker         Farbe           PN5180
 5V     ------   sw   ---------  5V
@@ -55,7 +55,7 @@ GND    ------   br   ---|--+    GPIO
                                 REQ 
 ```
 
-##Rotary-Encoder
+## Rotary-Encoder
 ```
 Stecker     Farbe           Encoder
 DT  -----   sw   -+    +-  CLK
@@ -65,7 +65,7 @@ BTN -----   ws   --------  SW
 GND -----   or   --------  GND
 ```
 
-##NeoPixel
+## NeoPixel
 ```
 Stecker     Farbe          LED-Stripe	
 -   -----   rt    -------  -	
