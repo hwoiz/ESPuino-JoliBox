@@ -8,7 +8,9 @@ Zur leichteren Verschraubung der Bauteile wurden in die vorgesehenen Löcher M3-
 
 Die vollständigen Konstruktionsdaten zum Import in Fusion 360 stelle ich [hier](Gehäuse/ESPuino-Jolibox.f3z) zur Verfügung. Dort kann dann die Konstruktion der Box an die eigenen Wünsche angepasst werden.
 
-Falls die Box ohne Anpassungen gedruckt werden soll, stelle ich nachfolgend die dafür notwendigen STL-Dateien zur Verfügung.
+Der Druck erfolgte mit PLA auf einem Anycubic i3 Mega. 
+
+Falls die Box ohne Anpassungen gedruckt werden soll, stelle ich nachfolgend die dafür notwendigen STL-Dateien zur Verfügung. Sie müsen noch für den verwendeten 3D-Drucker in gcode-Dateien umgewandelt werden. Hierfür kann die kostenlose Software [Cura](https://ultimaker.com/software/ultimaker-cura/) oder [PrusaSlicer](https://www.prusa3d.com/de/page/prusaslicer_424/) verwendet werden.
 
 ### Box Unterteil
 ![Box-Unterteil](Gehäuse/Gehäuse_Unterteil.png)
@@ -25,9 +27,11 @@ Falls die Box ohne Anpassungen gedruckt werden soll, stelle ich nachfolgend die 
 ---
 ### LED-Halter
 ![LED-Halter](Gehäuse/LED-Halter.png)
->[LED-Halter-Aussen.stl](Gehäuse/LED-Halter-Aussen.stl)
+>[LED-Halter-Aussen.stl](Gehäuse/LED-Halter-Aussen.stl) -  :warning: Transparentes PLA verwenden
 
 >[LED-Halter-Deckel.stl](Gehäuse/LED-Halter-Deckel.stl)
+
+Der Halter nimmt einen Abschnitt von 12 LED eines RGB LED-Streifen WS2812B mit 144 LED/m auf ([z.B. Amazon-Link](https://www.amazon.de/gp/product/B08P6XN49P/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)).
 
 ---
 ### Tastatur-Halter
