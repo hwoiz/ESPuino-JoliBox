@@ -12,7 +12,7 @@ Die gesamte Administration des Audioplayers erfolgt über eine Webseite mit eine
 
 - [Benutzerhandbuch](Dokumentation/Benutzerhandbuch.md)
 - [Technikhandbuch](Dokumentation/Technikhandbuch.md)
-- Gehäuse
+- [Gehäuse Konstrutiondaten](Dokumentation/Gehäuse.md)
 - [Deutsche Übersetzung der README.md aus dem biologist79-Repository](Dokumentation/README.md-biologist.md)
 
 
