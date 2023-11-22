@@ -4,6 +4,8 @@ Um die Elektronik ansprechend und kindgerecht zu verpacken, wurde ein Gehäuse f
 
 Die zum Druck notwendigen STL-Dateien wurden mit der Lizenz von Fusion 360 für Privatanweder erstellt. Diese kann nach einer Registrierung [hier](https://www.autodesk.de/products/fusion-360/personal-form) kostenlos heruntergeladen werden.
 
+Zur leichteren Verschraubung der Bauteile wurden in die vorgesehenen Löcher M3-Messing-Einpressmuttern ([z.B. Amazon-Link](https://www.amazon.de/STCRERAG-Gewindeeinsatz-Einpressmutter-Schmelzgewinde-Kunststoffteile/dp/B095VW7GBW/ref=sr_1_7?crid=1J06Y3JZYD9ER&keywords=muttern+3d+druck&qid=1700661196&sprefix=muttern+3d%2Caps%2C100&sr=8-7)) mit dem Lötkolben eingeschmolzen. 
+
 Die vollständigen Konstruktionsdaten zum Import in Fusion 360 stelle ich [hier](Gehäuse/ESPuino-Jolibox.f3z) zur Verfügung. Dort kann dann die Konstruktion der Box an die eigenen Wünsche angepasst werden.
 
 Falls die Box ohne Anpassungen gedruckt werden soll, stelle ich nachfolgend die dafür notwendigen STL-Dateien zur Verfügung.
