@@ -1,6 +1,7 @@
 # Gehäuse
 Um die Elektronik ansprechend und kindgerecht zu verpacken, wurde ein Gehäuse für den 3D-Druck entwickelt.
 ![JoliBox](images/Jolibox-Gesamt.png)
+
 Die zum Druck notwendigen STL-Dateien wurden mit der Lizenz von Fusion 360 für Privatanweder erstellt. Diese kann nach einer Registrierung [hier](https://www.autodesk.de/products/fusion-360/personal-form) kostenlos heruntergeladen werden.
 
 Die vollständigen Konstruktionsdaten zum Import in Fusion 360 stelle ich [hier](Gehäuse/ESPuino-Jolibox.f3z) zur Verfügung. Dort kann dann die Konstruktion der Box an die eigenen Wünsche angepasst werden.
