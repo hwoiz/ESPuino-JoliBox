@@ -41,12 +41,12 @@
 	#define LANGUAGE DE                     // DE = deutsch; EN = english
 	//#define STATIC_IP_ENABLE              // DEPRECATED: Enables static IP-configuration (change static ip-section accordingly)
 	#define HEADPHONE_ADJUST_ENABLE         // Used to adjust (lower) volume for optional headphone-pcb (refer maxVolumeSpeaker / maxVolumeHeadphone) and to enable stereo (if PLAY_MONO_SPEAKER is set)
-	//#define PLAY_MONO_SPEAKER             // If only one speaker is used enabling mono should make sense. Please note: headphones is always stereo (if HEADPHONE_ADJUST_ENABLE is active)
+	#define PLAY_MONO_SPEAKER             // If only one speaker is used enabling mono should make sense. Please note: headphones is always stereo (if HEADPHONE_ADJUST_ENABLE is active)
 	#define SHUTDOWN_IF_SD_BOOT_FAILS       // Will put ESP to deepsleep if boot fails due to SD. Really recommend this if there's in battery-mode no other way to restart ESP! Interval adjustable via deepsleepTimeAfterBootFails.
 	#define MEASURE_BATTERY_VOLTAGE         // Enables battery-measurement via GPIO (ADC) and voltage-divider
 	//#define MEASURE_BATTERY_MAX17055      // Enables battery-measurement via external fuel gauge (MAX17055)
 	//#define SHUTDOWN_ON_BAT_CRITICAL      // Whether to turn off on critical battery-level (only used if MEASURE_BATTERY_XXX is active)
-	//#define PLAY_LAST_RFID_AFTER_REBOOT   // When restarting ESPuino, the last RFID that was active before, is recalled and played
+	#define PLAY_LAST_RFID_AFTER_REBOOT   // When restarting ESPuino, the last RFID that was active before, is recalled and played
 	//#define USE_LAST_VOLUME_AFTER_REBOOT  // Remembers the volume used at last shutdown after reboot
 	#define USEROTARY_ENABLE                // If rotary-encoder is used (don't forget to review WAKEUP_BUTTON if you disable this feature!)
 	#define BLUETOOTH_ENABLE                // If enabled and bluetooth-mode is active, you can stream to your ESPuino or to a headset via bluetooth (a2dp-sink & a2dp-source). Note: This feature consumes a lot of resources and the available flash/ram might not be sufficient.
@@ -71,9 +71,9 @@
 
 
 	//################## select RFID reader ##############################
-	#define RFID_READER_TYPE_MFRC522_SPI    // use MFRC522 via SPI
+	//#define RFID_READER_TYPE_MFRC522_SPI    // use MFRC522 via SPI
 	//#define RFID_READER_TYPE_MFRC522_I2C  // use MFRC522 via I2C
-	//#define RFID_READER_TYPE_PN5180       // use PN5180 via SPI
+	#define RFID_READER_TYPE_PN5180       // use PN5180 via SPI
 
 	#ifdef RFID_READER_TYPE_MFRC522_I2C
 		#define MFRC522_ADDR 0x28           // default I2C-address of MFRC522
@@ -121,36 +121,36 @@
 		If you don't want to assign an action or you don't use a given button: CMD_NOTHING has to be set
 	*/
 	// *****BUTTON*****        *****ACTION*****
-	#define BUTTON_0_SHORT    CMD_NEXTTRACK
-	#define BUTTON_1_SHORT    CMD_PREVTRACK
-	#define BUTTON_2_SHORT    CMD_PLAYPAUSE
-	#define BUTTON_3_SHORT    CMD_MEASUREBATTERY
-	#define BUTTON_4_SHORT    CMD_SEEK_BACKWARDS
-	#define BUTTON_5_SHORT    CMD_SEEK_FORWARDS
-
-	#define BUTTON_0_LONG     CMD_LASTTRACK
-	#define BUTTON_1_LONG     CMD_FIRSTTRACK
-	#define BUTTON_2_LONG     CMD_PLAYPAUSE
-	#define BUTTON_3_LONG     CMD_SLEEPMODE
-	#define BUTTON_4_LONG     CMD_VOLUMEUP
-	#define BUTTON_5_LONG     CMD_VOLUMEDOWN
-
-	#define BUTTON_MULTI_01   CMD_NOTHING   //CMD_TOGGLE_WIFI_STATUS (disabled now to prevent children from unwanted WiFi-disable)
-	#define BUTTON_MULTI_02   CMD_ENABLE_FTP_SERVER
-	#define BUTTON_MULTI_03   CMD_NOTHING
-	#define BUTTON_MULTI_04   CMD_NOTHING
-	#define BUTTON_MULTI_05   CMD_NOTHING
-	#define BUTTON_MULTI_12   CMD_TELL_IP_ADDRESS
-	#define BUTTON_MULTI_13   CMD_NOTHING
-	#define BUTTON_MULTI_14   CMD_NOTHING
-	#define BUTTON_MULTI_15   CMD_NOTHING
-	#define BUTTON_MULTI_23   CMD_NOTHING
-	#define BUTTON_MULTI_24   CMD_NOTHING
-	#define BUTTON_MULTI_25   CMD_NOTHING
-	#define BUTTON_MULTI_34   CMD_NOTHING
-	#define BUTTON_MULTI_35   CMD_NOTHING
-	#define BUTTON_MULTI_45   CMD_NOTHING
-
+    #define BUTTON_0_SHORT    CMD_NEXTTRACK                   // Nächster Titel              	
+    #define BUTTON_1_SHORT    CMD_PREVTRACK                   // vorheriger Titel              	
+    #define BUTTON_2_SHORT    CMD_PLAYPAUSE                   // Play/Pause             	
+    #define BUTTON_3_SHORT    CMD_NOTHING                     // nicht definiert
+    #define BUTTON_4_SHORT    CMD_SEEK_BACKWARDS              // um 30 Sek. zurückspulen 
+    #define BUTTON_5_SHORT    CMD_SEEK_FORWARDS               // um 30 Sek. vorspulen
+    
+    #define BUTTON_0_LONG     CMD_LASTTRACK                   // letzter Titel der Playliste
+    #define BUTTON_1_LONG     CMD_FIRSTTRACK                  // erster Titel der Playliste
+    #define BUTTON_2_LONG     CMD_SLEEPMODE                   // Ausschalten
+    #define BUTTON_3_LONG     CMD_SLEEPMODE                   // nicht definiert
+    #define BUTTON_4_LONG     CMD_VOLUMEUP                    // Lautstärke erhöhen
+    #define BUTTON_5_LONG     CMD_VOLUMEDOWN                  // Lautstärke verringern
+ 
+    #define BUTTON_MULTI_01   CMD_REPEAT_TRACK                // Titel endlos wdhl. 
+    #define BUTTON_MULTI_02   CMD_ENABLE_FTP_SERVER           // FTP-Server aktivieren 
+    #define BUTTON_MULTI_03   CMD_NOTHING                     // nicht definiert 
+    #define BUTTON_MULTI_04   CMD_TOGGLE_BLUETOOTH_SINK_MODE  // Bluetooth-Modus an/aus
+    #define BUTTON_MULTI_05   CMD_DIMM_LEDS_NIGHTMODE         // LED auf Nachtmodus 
+    #define BUTTON_MULTI_12   CMD_TELL_IP_ADDRESS             // IP-Adresse der Box ansagen
+    #define BUTTON_MULTI_13   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_14   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_15   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_23   CMD_NOTHING                	  // nicht definiert
+    #define BUTTON_MULTI_24   CMD_SLEEP_TIMER_MOD_30          // Sleeptimer 30 Minuten 
+    #define BUTTON_MULTI_25   CMD_NOTHING                	  // nicht definiert
+    #define BUTTON_MULTI_34   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_35   CMD_NOTHING                     // nicht definiert
+    #define BUTTON_MULTI_45   CMD_TOGGLE_BLUETOOTH_SOURCE_MODE // Bluetooth-Kopfhörer 
+	
 	//#################### Various settings ##############################
 
 	// Serial-logging-configuration
