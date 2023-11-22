@@ -32,13 +32,31 @@ Es wurden folgende Baugruppen und Bauteile zur Realisierung eingesetzt.
 
 ## ESPuino-mini_4Layer
  ![ESPuino-mini_4Layer](images/ESPuino-mini_4Layer.png)
+ ![Espuino-mini_1](images/ESPuino-mini-Schaltung-1.png)
+ ![Espuino-mini_2](images/ESPuino-mini-Schaltung-2.png)
+ ![Espuino-mini_3](images/ESPuino-mini-Schaltung-3.png)
+ ![Espuino-mini_4](images/ESPuino-mini-Schaltung-4.png)
+ ![Espuino-mini_5](images/ESPuino-mini-Schaltung-5.png)
+ ![Espuino-mini_6](images/ESPuino-mini-Schaltung-6.png)
+ ** Hardware Konfiguration **
+Auf Unterseite der Platine befinden sich mehrere Lötbrücken (JP1 bis JP7, JP5 fehlt), die konfiguriert werden können bzw. müssen. Sie werden im Folgenden beschrieben. Kursiv markiert ist die Konfiguration, die aus meiner Sicht „standard“ ist (sofern anwendbar):
+JP1: *Schließe* 1+2 wenn du kein LPCD benötigst (Normalzustand). Schließe 2+3, wenn du LPCD benötigst. Auswirkung: Für LPCD wird das RFID-Modul dauerhaft mit Spannung versorgt, so dass eine etwas höhere Stromaufnahme im Deepsleep anfällt. Vergisst du JP1 komplett, so wird dein RFID-Reader nicht funktionieren, da er (egal wann) keine Versorgungsspannung erhält. Hinweis: Willst du dieses Feature nutzen, dann musst du auch die Brücke von JP4 schließen. Sollte dir unklar sein, was LPCD bedeutet, so findest du hier die Erklärung: 📗 [Was ist LPCD und wie funktioniert es?](https://forum.espuino.de/t/was-ist-lpcd-und-wie-funktioniert-es/1664).
+**Pflicht!**
+JP2: *Schließe* 1+2 wenn DT des Drehencoders auf GPI(O)39 geroutet werden soll. Schließe 2+3, wenn GPIO39 frei sein soll und DT stattdessen auf dem Port-Expander (109) landen soll. Stand jetzt (01/2023) macht ausschließlich GPIO Sinn, da ESPuino hier den Port-Expander noch nicht unterstützt. Vergisst du JP2 komplett, so funktioniert die Drehbewegung deines Drehencoders nicht (sofern du diesen verwendest).
+**Pflicht wenn ein Drehencoder verwendet wird!**
+JP3: Schließe 1+2 wenn CLK des Drehencoders auf GPIO34 geroutet werden soll. Schließe 2+3, wenn GPIO34 frei sein soll und DT stattdessen auf dem Port-Expander (110) landen soll. Stand jetzt (01/2023) macht ausschließlich GPIO Sinn, da ESPuino hier den Port-Expander noch nicht unterstützt. Vergisst du JP3 komplett, so funktioniert die Drehbewegung deines Drehencoders nicht (sofern du diesen verwendest).
+**Pflicht wenn ein Drehencoder verwendet wird**
+JP4: Schließe diese Brücke, wenn du LPCD verwenden möchtest (beachte dafür unbedingt auch JP1!).
+**Optional!**
+JP5: Gibt es nicht (mehr).
+JP6: *Schließe* 1+2 wenn der 3.3 V-Pin am externen I2C-Konnektor dauerhaft mit Spannung versorgt werden soll. Schließe 2+3, wenn er im Deepsleep des ESP32 spannungslos geschaltet werden soll. Da so gut wie niemand bisher externe I2C-Devices anschließt, hat ein Vergessen der Brücke erstmal keine Auswirkungen. Hintergrund der Konfigurationsmöglichkeit ist [hier](https://forum.espuino.de/t/espuino-minid32-pro-lolin-d32-d32-pro-mit-sd-mmc-und-port-expander-smd/866/53) beschrieben.
+**Optional!**
+JP7: Wenn du einen zweiten MAX98357a 90 anschließen möchtest, dann solltest du diese Brücke schließen, so dass der aufgelötete MAX98357a nur den linken Kanal ausgibt. Der zweite MAX98357a wird automatisch den rechten Kanal ausgeben, so dass du stereo über zwei Lautsprecher nutzen kannst. Achte in diesem Falle auch drauf, dass du PLAY_MONO_SPEAKER auskommentieren musst.
+**Optional!**
 
-## D32_FePo_rev4
-![D32_FePo_rev4](images/D32_FePo_rev4.png)
+### Kabelplan
 
-## Kabelplan
-
-### RFID-Reader 5180
+#### RFID-Reader 5180
 ```
 Stecker         Farbe           PN5180
 5V     ------   sw   ---------  5V
@@ -56,7 +74,7 @@ GND    ------   br   ---|--+    GPIO
                                 REQ 
 ```
 
-### Rotary-Encoder
+#### Rotary-Encoder
 ```
 Stecker     Farbe           Encoder
 DT  -----   sw   -+    +-  CLK
@@ -66,13 +84,24 @@ BTN -----   ws   --------  SW
 GND -----   or   --------  GND
 ```
 
-### NeoPixel
+#### NeoPixel
 ```
 Stecker     Farbe          LED-Stripe	
 -   -----   rt    -------  -	
 D1  -----   sw    -------  D0
 +   -----   ge    -------  5V
 ```
+
+## D32_FePo_rev4
+![D32_FePo_rev4](images/D32_FePo_rev4.png)
+![D32_FePo-Schaltung](images/D32_FePo-Schaltung-1.png)
+![D32_FePo-Schaltung](images/D32_FePo-Schaltung-2.png)
+![D32_FePo-Schaltung](images/D32_FePo-Schaltung-3.png)
+![D32_FePo-Schaltung](images/D32_FePo-Schaltung-4.png)
+![D32_FePo-Schaltung](images/D32_FePo-Schaltung-5.png)
+> :warning:	**Wichtig**
+> Auf keinen Fall darf ein LiPo-Akku angeschlossen werden. Der TP5000 unterstützt, wenn man ihn entsprechend beschaltet, zwar auch LiPo, ich habe ihn (aus Komplexitäts- und Platzgründen) jedoch fest auf FePo eingestellt. 
+> Das Hauptproblem ist jedoch: Wird ein LiPo-Akku angeschlossen, so geht, je nach Akkuspannung (Ladung), mindestens das ESP32-Modul kaputt, weil die Spannung vom Akku (wie oben beschrieben und im Schaltplan sichtbar) nicht durch den Festspannungsregler läuft und Spannungen >3,6 V vom ESP32 nicht toleriert werden!!! LiPo liefert jedoch bis zu 4,2 V. Das Umgehen des Festspannungsreglers habe ich deswegen so gemacht, weil es die FePo-Spannung, die ja schon passt, unerwünscht reduzieren würde, wenn die Batteriespannung ebenfalls den gleichen Weg wie USB ginge.
 
 ## Zusatzplatine Akkuhalterung
 Für den Anschuss von der Lade LED, dem Not-Reset-Schalter, der Ladebuchse und der Schutzschaltung für den Akku wurde eine Lochrasterplatine verwendet.
@@ -137,10 +166,12 @@ Nach der Übernahme des Sourcecode von biologist sind in folgenden Dateien einig
 ## settings.h
 
 ```34: #define PORT_EXPANDER_ENABLE``` Zeile aktivieren
-
+```44: #define PLAY_MONO_SPEAKER``` Zeile aktivieren
+```49: #define PLAY_LAST_RFID_AFTER_REBOOT``` Zeile aktivieren
 ```57: #define SAVE_PLAYPOS_BEFORE_SHUTDOWN``` Zeile aktivieren
-
 ```58: #define SAVE_PLAYPOS_WHEN_RFID_CHANGE``` Zeile aktivieren
+```74: #define RFID_READER_TYPE_MFRC522_SPI``` Zeile auskommentieren
+```76: #define RFID_READER_TYPE_PN5180``` Zeile aktivieren
 
 Zeilen 124 bis 152 mit nachfolgenden Zeilen ersetzen
 
@@ -177,8 +208,8 @@ Zeilen 124 bis 152 mit nachfolgenden Zeilen ersetzen
 ```
 
 ```203: constexpr const char accessPointNetworkSSID[] = "Jolibox";``` Von  `ESPuino`  auf `Jolibox` ändern
-
 ```207: constexpr const char nameBluetoothSinkDevice[] = "Jolibox";```  Von `ESPuino` auf `Jolibox` ändern
+```215: #define NUM_INDICATOR_LEDS 12 ``` Von `24` auf `12` ändern
 
 
 ## settings-lolin_d32_pro_sdmmc_pe.h
@@ -187,4 +218,3 @@ Zeilen 124 bis 152 mit nachfolgenden Zeilen ersetzen
 
 ``` 97: #define INVERT_POWER```  Zeile aktivieren    
 
-```215: #define NUM_INDICATOR_LEDS 12 ``` Von `24` auf `12` ändern
