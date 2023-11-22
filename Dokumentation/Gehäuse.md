@@ -44,7 +44,6 @@ Falls die Box ohne Anpassungen gedruckt werden soll, stelle ich nachfolgend die 
 
 >[Tragegurtverschluss-unten.stl](Gehäuse/Tragegurtverschluss-unten.stl)
 
----
 > :information_source: Für den Tragegurt wurde farbiges Gurtband von 10mm Breite und 1,5mm Stärke benutzt ([z.B. Amazon-Link](https://www.amazon.de/gp/product/B0BNJCMKBM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)).
 
 ---
