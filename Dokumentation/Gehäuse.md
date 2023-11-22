@@ -24,6 +24,7 @@ Falls die Box ohne Anpassungen gedruckt werden soll, stelle ich nachfolgend die 
 ### LED-Halter
 ![LED-Halter](Gehäuse/LED-Halter.png)
 >[LED-Halter-Aussen.stl](Gehäuse/LED-Halter-Aussen.stl)
+
 >[LED-Halter-Deckel.stl](Gehäuse/LED-Halter-Deckel.stl)
 
 ---
@@ -40,6 +41,7 @@ Falls die Box ohne Anpassungen gedruckt werden soll, stelle ich nachfolgend die 
 ### Tragegurtverschluss
 ![Tragegurtverschluss](Gehäuse/Tragegurtverschluss.png)
 >[Tragegurtverschluss-oben.stl](Gehäuse/Tragegurtverschuss-oben.stl)
+
 >[Tragegurtverschluss-unten.stl](Gehäuse/Tragegurtverschluss-unten.stl)
 
 ---
