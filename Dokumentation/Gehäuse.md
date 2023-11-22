@@ -8,33 +8,38 @@ Die vollständigen Konstruktionsdaten zum Import in Fusion 360 stelle ich [hier]
 
 Falls die Box ohne Anpassungen gedruckt werden soll, stelle ich nachfolgend die dafür notwendigen STL-Dateien zur Verfügung.
 
-##### Box Unterteil
+### Box Unterteil
 ![Box-Unterteil](Gehäuse/Gehäuse_Unterteil.png)
 >[Gehäuse_Unterteil.stl](Gehäuse/Gehäuse_Unterteilteil.stl)
 
 > :information_source: Die vier senkrechten Seiten der Box wurden mit 1mm starkem, farblich unterschiedlichem Filz beklebt ([z.B. Amazon-Link](https://www.amazon.de/gp/product/B01MDNM6D7/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)). Der Filz wurde mit Sprühkleber befestigt. 
 > Alternativ können auch entsprechende Abdeckungen mit dem 3D-Drucker erstellt werden. 
  
-##### Box Oberteil
+### Box Oberteil
 ![Box-Oberteil](Gehäuse/Gehäuse_Oberteil.png)
 >[Gehäuse_Oberteil.stl](Gehäuse/Gehäuse_Unterteilteil.stl)
-##### LED-Halter
+
+### LED-Halter
 ![LED-Halter](Gehäuse/LED-Halter.png)
 >[LED-Halter-Aussen.stl](Gehäuse/LED-Halter-Aussen.stl)
 >[LED-Halter-Deckel.stl](Gehäuse/LED-Halter-Deckel.stl)
-##### Tastatur-Halter
+
+### Tastatur-Halter
 ![Tastatur-Halter](Gehäuse/Tastaturhalter.png)
 >[Tastaturhalter.stl](Gehäuse/Tastaturhalter.stl)
-##### Tastatur-Symbole
+
+### Tastatur-Symbole
 ![Tastatur-Symbole](Gehäuse/Symbole.png)
 >[Symbole.stl](Gehäuse/Symbole.stl)
-##### Tragegurtverschluss
+
+### Tragegurtverschluss
 ![Tragegurtverschluss](Gehäuse/Tragegurtverschluss.png)
 >[Tragegurtverschluss-oben.stl](Gehäuse/Tragegurtverschuss-oben.stl)
 >[Tragegurtverschluss-unten.stl](Gehäuse/Tragegurtverschluss-unten.stl)
 
 > :information_source: Für den Tragegurt wurde farbiges Gurtband von 10mm Breite und 1,5mm Stärke benutzt ([z.B. Amazon-Link](https://www.amazon.de/gp/product/B0BNJCMKBM/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)).
-##### Träger-Stromversorgung
+
+### Träger-Stromversorgung
 ![Träger-Stromversorgung](Gehäuse/TrägerStromversorgung.png)
 >[TrägerStromversorgung.stl](Gehäuse/TrägerStromversorgung.stl)
 
