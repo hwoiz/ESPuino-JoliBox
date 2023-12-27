@@ -1,4 +1,4 @@
-# Jolibox- Entwicklungsplattform
+# Jolibox- Testplattform
 ## Ein mit RFID-Karten steuerbarer Audioplayer
 ![Jolibox](Dokumentation/images/Jolibox-Gesamt.png)
 
